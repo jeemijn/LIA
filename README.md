@@ -6,7 +6,7 @@ This repository contains the analysis code used in the paper:
 
 It loads the model output data (which must be downloaded from a zenodo repository) and reproduces all figures.
 
-All code is gathered in a well-documented ipython notebook with in addition a functions.py file, from where user-defined functions are loaded.
+All code is gathered in a well-documented ipython notebook LIA.ipynb with in addition a functions.py file, from where user-defined functions are loaded.
 
 ## Options:
 - **A. Look at the static code by clicking on LIA.ipynb.** This is only a snapshot and cannot be adjusted. This option is useful if you don't want to run the notebook yourself, since you can just read or copy the python code of the part you are interested in.

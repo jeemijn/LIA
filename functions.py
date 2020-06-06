@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+"""This file contains helper functions that are read in and used in LIA.ipynb. 
+Functions to compute are in the first half; functions to plot in the second half (in random order)."""
+
 
 def load_data_multiple_runs(folder, runs, spinup_yr=1765, full=True, full_inst=False):
     """Input: 

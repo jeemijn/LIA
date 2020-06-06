@@ -1,0 +1,2 @@
+Generated figures will appear in this folder. 
+(Git doesn't store empty folders, therefore this placeholder.)

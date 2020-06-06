@@ -6,15 +6,15 @@ This repository contains the analysis code used in the paper:
 
 It loads the model output data (which must be downloaded from a zenodo repository) and reproduces all figures.
 
-All code is gathered in a well-documented ipython notebook LIA.ipynb with in addition a functions.py file, from where user-defined functions are loaded.
+All code is gathered in a well-documented ipython notebook (LIA.ipynb) with in addition a functions.py file, from where user-defined functions are loaded.
 
 ## Options:
-- **A. Look at the static code by clicking on LIA.ipynb.** This is only a snapshot and cannot be adjusted. This option is useful if you don't want to run the notebook yourself, since you can just read or copy the python code of the part you are interested in.
+- **A. Look at the static code by clicking on LIA.ipynb.** This is only a snapshot and cannot be adjusted. If the preview doesn't work, try again or use a different browser. This option is useful if you don't want to run the notebook yourself, since you can just read or copy the python code of the part you are interested in.
 - **B. Run the notebook yourself** and make any changes you want, or reuse specific functions or figures in your own research ([license](https://github.com/jeemijn/LIA/blob/master/LICENSE)). Please consider to cite the doi of this code repository and/or the original paper scheen20esd. Final-version doi's for data and for code are cited in scheen20esd under Code and data availability.
 
 ## Required steps for option B:
-1. Download the simulation output data from zenodo: **here**. You can choose to download either the small (4 Gb) or large (22 Gb) version of the dataset. You only need the small version to run the notebook and reproduce the figures, but you are free to explore additional variables in the large version. Unzip and rename the folder you chose to 'data'.
-2. Download this github repository via the 'Clone or download' button at the top right and choose Download ZIP. 
-3. Place the 'data' folder (step 1) inside the repository (step 2). Now your folder should contain: LIA.ipynb, functions.py, figures (empty folder), and data (folder containing data; no subfolders).
-4. If you do not already have it: install python 3 and e.g. jupyter notebook or jupyter lab **todo links**to run the ipython notebook. 
+1. Download the simulation output data from zenodo here: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3878835.svg)](https://doi.org/10.5281/zenodo.3878835). You can choose to download either the small (unzipped 4 Gb) or large (unzipped 22 Gb) version of the dataset. Note that this is not only about storage, but this amount needs to be loaded into memory when running the notebook. You only need the small version to run the notebook and reproduce the figures, but you are free to explore additional variables in the large version. Unzip and rename the folder you chose to 'data'.
+2. Download this github repository via the 'Clone or download' button at the top right and choose Download ZIP. Unzip.
+3. Place the 'data' folder (step 1) inside the repository (step 2). Now your folder should contain: LIA.ipynb, functions.py, figures directory, and data directory (containing the data; no subfolders).
+4. If you do not already have it: install jupyter notebook or jupyter lab [here](https://jupyter.org/install) to run the ipython notebook. Choose python 3, not python 2. 
 5. You are all set! The rest of the documentation is inside the notebook. 

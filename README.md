@@ -6,7 +6,14 @@ This repository contains the analysis code used in the paper:
 
 It loads the model output data (which must be downloaded from a zenodo repository) and reproduces all figures.
 
-All code is gathered in a well-documented ipython notebook (LIA.ipynb) with in addition a functions.py file, from where user-defined functions are loaded.
+All code is gathered in a well-documented ipython notebook (LIA.ipynb) with in addition a functions.py file, from where user-defined functions are loaded.  
+
+# Overview of doi's:
+- code (analysis and figures): 
+[![DOI](https://zenodo.org/badge/263658143.svg)](https://zenodo.org/badge/latestdoi/263658143)  
+
+- data (simulation output): 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3878835.svg)](https://doi.org/10.5281/zenodo.3878835)  
 
 ## A. For a static preview of the code, click [here](https://github.com/jeemijn/LIA/blob/master/LIA.ipynb)
 This is only a snapshot and cannot be adjusted. If the preview doesn't work, reload or switch browser. 

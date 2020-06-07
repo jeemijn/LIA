@@ -8,7 +8,7 @@ It loads the model output data (which must be downloaded from a zenodo repositor
 
 All code is gathered in a well-documented ipython notebook (LIA.ipynb) with in addition a functions.py file, from where user-defined functions are loaded.  
 
-# Overview of doi's:
+### Overview of doi's:
 - code (analysis and figures): 
 [![DOI](https://zenodo.org/badge/263658143.svg)](https://zenodo.org/badge/latestdoi/263658143)  
 

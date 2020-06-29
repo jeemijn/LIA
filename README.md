@@ -2,7 +2,7 @@
 
 This repository contains the analysis code used in the paper:
 
-**Scheen, Jeemijn and Stocker, Thomas F., "Effect of changing ocean circulation on deep ocean temperature in the last millennium", Earth System Dynamics Discussions, 2020**
+**Scheen, Jeemijn and Stocker, Thomas F., "Effect of changing ocean circulation on deep ocean temperature in the last millennium", Earth System Dynamics Discussions, https://doi.org/10.5194/esd-2020-30, 2020**
 
 It loads the model output data (which must be downloaded from a zenodo repository) and reproduces all figures.
 

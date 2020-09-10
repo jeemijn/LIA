@@ -7,8 +7,8 @@ Functions to compute are in the first half; functions to plot in the second half
 
 def load_data_multiple_runs(folder, runs, spinup_yr=1765, full=True, full_inst=False):
     """Input: 
-    - folder 
-    - runs is string array of runnames 
+    - folder must be a pathlib.Path object
+    - runs is string array of runnames in this folder
     - spinup_yr [optional; if other than 1765] is an int if all simulations have equal spinup; otherwise int array
       N.B. needed since file_path = folder + runname + spinup_yr 
     - full [optional] if you want (no) full_ave.nc file (e.g. not generated for runs with output every time step)
@@ -47,17 +47,19 @@ def load_data_multiple_runs(folder, runs, spinup_yr=1765, full=True, full_inst=F
             if isinstance(spinup_yr, (list, tuple, ndarray)):  # test if spinup_yr is a list/tuple/array
                 spinup_yr = spinup_yr[nr]
             spinup_yr_str = str(spinup_yr)
-        path = folder + runname + '.000' + spinup_yr_str
+        file = runname + '.000' + spinup_yr_str                # first part of file name; same for all
         # create datas
-        datas[runname] = open_dataset(path + '_timeseries_ave.nc', decode_times=False) 
+        # using / because folder is a pathlib.Path object (works on every operating system)
+        datas[runname] = open_dataset(folder / (file + '_timeseries_ave.nc'), decode_times=False) 
         datas[runname]['time'] -= subtract_yrs
         # create data_fulls
         if full:
-            data_fulls[runname] = open_dataset(path + '_full_ave.nc', decode_times=False)
+            data_fulls[runname] = open_dataset(folder / (file + '_full_ave.nc'), decode_times=False)
             data_fulls[runname]['time'] -= subtract_yrs
         # create data_fulls_inst using dask arrays (chunks) because of large file sizes
         if full_inst:
-            data_fulls_inst[runname] = open_dataset(path + '_full_inst.nc', decode_times=False, chunks={'yearstep_oc': 20})
+            data_fulls_inst[runname] = open_dataset(folder / (file + '_full_inst.nc'), 
+                                                    decode_times=False, chunks={'yearstep_oc': 20})
             data_fulls_inst[runname]['time'] -= subtract_yrs
             
     # generate resulting array in correct order
@@ -1197,3 +1199,20 @@ def plot_overturning(data, data_full, times, time_avg=False, atl=True, pac=False
     tight_layout()    
     
     return fig, ax
+
+
+def Bern3D_longitude(ds):
+    """Converts an xarray dataset with GH19 conventions to Bern3D grid conventions"""
+    
+    # rename dimensions since used in my contour plotting routine
+    ds = ds.rename_dims(dims_dict={'longitude': 'lon_t', 'latitude': 'lat_t'})
+    ds = ds.rename({'longitude': 'lon_t', 'latitude': 'lat_t'})  # rename coords as well
+    
+    # convert longitude from [0,360] degrees East to Bern3D longitude [100,460] (Greenwich on 360):
+    ds.lon_t.values = [t.item() + 360 if t < 100.0 
+                       else t.item() 
+                       for t in ds.lon_t]
+    ds = ds.sortby(ds.lon_t)
+    return ds
+
+
